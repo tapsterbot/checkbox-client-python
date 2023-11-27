@@ -30,7 +30,7 @@ Python client library for Tapster Checkbox
   >> m.up()
 
   # Go to a specific location using MouseKeys:
-  # MouseKeys mouse movements have zero acceleration, so calls are consisent and accurate.
+  # MouseKeys mouse movements have zero acceleration, so calls are consistent and accurate.
   >>> mk.move_to(100,100)
 
   # Type text:
