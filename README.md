@@ -51,7 +51,7 @@ Python client library for Tapster Checkbox
   Select AssistiveTouch
   Slide AssistiveTouch toggle right to enable
   Slide "Perform Touch Gestures" toggle right to enable
-  Set "Tracking Sensitivity" max to the left (turtle icon)
+  Set "Tracking Sensitivity" min to the left (turtle icon)
   ```
 
 
@@ -62,7 +62,7 @@ Python client library for Tapster Checkbox
   Select MouseKeys
   Slide the MouseKeys toggle right to enable
   Slide "Use Primary Keyboard" toggle left to disable
-  Set "Initial Delay" max to the left (turtle icon)
+  Set "Initial Delay" min to the left (turtle icon)
   Set "Maximum Speed" to center (equidistant from turtle and rabbit)
   ```
 
