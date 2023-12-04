@@ -1,5 +1,6 @@
 import json
 import requests
+from typing import List
 from requests.compat import urljoin
 
 # Default host:
@@ -67,6 +68,21 @@ class Keyboard:
         url = urljoin(self._host, "/api/keyboard/type")
         payload = {'text': text}
         response = requests.post(url, json = payload)
+
+    def press(self, modifiers: List[int], key: int = 0):
+        """
+        Type text
+
+        Command line equivalent:
+        (Send Shift + Tab)
+        $ curl -X POST $HOST/api/keyboard/press \
+            -H "Content-Type: application/json" \
+            -d '{"modifiers": [2], "key": 43}'
+        """
+        url = urljoin(self._host, "/api/keyboard/press")
+        payload = {'modifiers': modifiers, 'key': key}
+        response = requests.post(url, json = payload)
+
 
 
 class RawMouse:
