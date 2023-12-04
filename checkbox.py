@@ -327,16 +327,20 @@ class MouseKeys:
 
 class Screenshot:
     def __init__(self, host = HOST):
-        self._host = host    
-    
-    def get_screenshot(self, filename = "screenshot.jpeg"):
+        self._host = host
+
+    def get_screenshot(self, filename = "screenshot.jpeg", format=""):
         """
         Type text
 
         Command line equivalent:
         $ curl $HOST/api/screenshot -o screenshot.jpeg
+        $ curl $HOST/api/screenshot/gray -o screenshot.jpeg
         """
-        url = urljoin(self._host, "/api/screenshot")
+        if format == "gray":
+            url = urljoin(self._host, "/api/screenshot/gray")
+        else:
+            url = urljoin(self._host, "/api/screenshot")
         response = requests.get(url)
         file = open(filename, "wb")
         file.write(response.content)
