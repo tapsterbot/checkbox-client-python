@@ -23,6 +23,20 @@ class Ping:
 
         return response.json()
 
+class Video:
+    def __init__(self, host = HOST):
+        self._host = host
+
+    def config(self, host = HOST):
+        """
+        Config video by cropping image to phone outline
+
+        Command line equivalent:
+        $ curl $HOST/api/config/video
+        """
+        url = urljoin(self._host, "/api/config/video/camera")
+        response = requests.post(url)
+
 
 class Config:
     def __init__(self, host = HOST):
