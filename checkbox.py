@@ -127,7 +127,7 @@ class Mouse:
         self.x = 0
         self.y = 0
         self.calibrated = False
-        self.raw = RawMouse()
+        self.raw = RawMouse(host)
 
     def jiggle(self):
         """
@@ -239,7 +239,7 @@ class MouseKeys:
         self.x = 0
         self.y = 0
         self.calibrated = False
-        self.raw = RawMouseKeys()
+        self.raw = RawMouseKeys(host)
 
     def jiggle(self):
         """
