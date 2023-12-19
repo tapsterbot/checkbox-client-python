@@ -129,18 +129,38 @@ class RawMouse:
         payload = {'x': x, 'y': y}
         response = requests.post(url, json = payload)
 
-    def swipe_up(self,):
+    def swipe_up(self):
         """
         Swipe up
 
         Command line equivalent:
         $ curl -X POST $HOST/api/raw/mouse/swipe/up \
-            -H "Content-Type: application/json" \
-            -d '{"x": 0, "y": 0}'
+            -H "Content-Type: application/json"
         """
         url = urljoin(self._host, "/api/raw/mouse/swipe/up")
         response = requests.post(url)
 
+    def swipe_right(self):
+        """
+        Swipe right
+
+        Command line equivalent:
+        $ curl -X POST $HOST/api/raw/mouse/swipe/right \
+            -H "Content-Type: application/json"
+        """
+        url = urljoin(self._host, "/api/raw/mouse/swipe/right")
+        response = requests.post(url)
+
+    def swipe_left(self):
+        """
+        Swipe left
+
+        Command line equivalent:
+        $ curl -X POST $HOST/api/raw/mouse/swipe/left \
+            -H "Content-Type: application/json"
+        """
+        url = urljoin(self._host, "/api/raw/mouse/swipe/left")
+        response = requests.post(url)
 
 class Mouse:
     """
