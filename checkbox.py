@@ -129,6 +129,19 @@ class RawMouse:
         payload = {'x': x, 'y': y}
         response = requests.post(url, json = payload)
 
+    def swipe_up(self,):
+        """
+        Swipe up
+
+        Command line equivalent:
+        $ curl -X POST $HOST/api/raw/mouse/swipe/up \
+            -H "Content-Type: application/json" \
+            -d '{"x": 0, "y": 0}'
+        """
+        url = urljoin(self._host, "/api/raw/mouse/swipe/up")
+        response = requests.post(url)
+
+
 class Mouse:
     """
     Example Usage:
