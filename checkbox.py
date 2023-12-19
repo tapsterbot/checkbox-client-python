@@ -140,16 +140,16 @@ class RawMouse:
         url = urljoin(self._host, "/api/raw/mouse/swipe/up")
         response = requests.post(url)
 
-    def swipe_right(self):
+    def swipe_down(self):
         """
-        Swipe right
+        Swipe down
 
         Command line equivalent:
-        $ curl -X POST $HOST/api/raw/mouse/swipe/right \
+        $ curl -X POST $HOST/api/raw/mouse/swipe/down \
             -H "Content-Type: application/json"
         """
-        url = urljoin(self._host, "/api/raw/mouse/swipe/right")
-        response = requests.post(url)
+        url = urljoin(self._host, "/api/raw/mouse/swipe/down")
+        response = requests.post(url)    
 
     def swipe_left(self):
         """
@@ -160,6 +160,17 @@ class RawMouse:
             -H "Content-Type: application/json"
         """
         url = urljoin(self._host, "/api/raw/mouse/swipe/left")
+        response = requests.post(url)    
+
+    def swipe_right(self):
+        """
+        Swipe right
+
+        Command line equivalent:
+        $ curl -X POST $HOST/api/raw/mouse/swipe/right \
+            -H "Content-Type: application/json"
+        """
+        url = urljoin(self._host, "/api/raw/mouse/swipe/right")
         response = requests.post(url)
 
 class Mouse:
