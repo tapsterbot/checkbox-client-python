@@ -8,7 +8,7 @@ Python client library for Tapster Checkbox
   cd checkbox-client-python
   python3 -m venv env
   source env/bin/activate
-  pip install -r requirements.txt
+  python -m pip install -r requirements.txt
   ```
 
 
