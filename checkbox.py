@@ -389,3 +389,26 @@ class Screenshot:
         file = open(filename, "wb")
         file.write(response.content)
         file.close()
+
+class Touch:
+    """
+    Example Usage:
+    >>> from checkbox import Touch
+    >>> t = Touch()
+    >>> t.tap(x = 50, y = 50)   # Valid values are between 0 and 100 (int or float, up to 2 decimal places)
+    """
+    def __init__(self, host = HOST):
+        self._host = host
+
+    def tap(self, x = 0, y = 0):
+        """
+        Tap at x, y location
+
+        Command line equivalent:
+        $ curl -X POST $HOST/api/touch/tap' \
+            -H "Content-Type: application/json" \
+            -d '{"x": 0, "y": 0}'
+        """
+        url = urljoin(self._host, "/api/touch/tap")
+        payload = {'x': x, 'y': y}
+        response = requests.post(url, json = payload)

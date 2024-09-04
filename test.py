@@ -1,7 +1,7 @@
 # To run script and start an interactive session (REPL):
 # $ python -i test.py --host=http://checkboxmini.local:5000
 
-from checkbox import Ping, Config, Keyboard, Mouse, MouseKeys, Screenshot
+from checkbox import Ping, Config, Keyboard, Mouse, MouseKeys, Screenshot, Video, Touch
 
 import argparse
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
@@ -24,6 +24,8 @@ p = Ping(host)
 m = Mouse(host)
 mk = MouseKeys(host)
 s = Screenshot(host)
+v = Video(host)
+t = Touch(host)
 
 # Shortcuts
 ping = p.ping
