@@ -412,3 +412,16 @@ class Touch:
         url = urljoin(self._host, "/api/touch/tap")
         payload = {'x': x, 'y': y}
         response = requests.post(url, json = payload)
+
+    def move(self, x1=0, y1=0, x2=0, y2=0):
+        """
+        Touch and drag from (x1, y1) to (x2, y2)
+
+        Command line equivalent:
+        $ curl -X POST $HOST/api/touch/move' \
+            -H "Content-Type: application/json" \
+            -d '{"x1": 0, "y1": 0, "x2": 10, "y2": 10}'
+        """
+        url = urljoin(self._host, "/api/touch/move")
+        payload = {'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2}
+        response = requests.post(url, json = payload)
