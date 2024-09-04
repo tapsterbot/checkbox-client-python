@@ -4,7 +4,7 @@ from typing import List
 from requests.compat import urljoin
 
 # Default host:
-HOST = "http://checkboxmini.local:5000"
+HOST = "http://localhost:5000"
 
 class Ping:
     def __init__(self, host = HOST):
@@ -32,7 +32,7 @@ class Video:
         Config video by cropping image to phone outline
 
         Command line equivalent:
-        $ curl $HOST/api/config/video
+        $ curl $HOST/api/config/video/camera
         """
         url = urljoin(self._host, "/api/config/video/camera")
         response = requests.post(url)
@@ -149,7 +149,7 @@ class RawMouse:
             -H "Content-Type: application/json"
         """
         url = urljoin(self._host, "/api/raw/mouse/swipe/down")
-        response = requests.post(url)    
+        response = requests.post(url)
 
     def swipe_left(self):
         """
@@ -160,7 +160,7 @@ class RawMouse:
             -H "Content-Type: application/json"
         """
         url = urljoin(self._host, "/api/raw/mouse/swipe/left")
-        response = requests.post(url)    
+        response = requests.post(url)
 
     def swipe_right(self):
         """
